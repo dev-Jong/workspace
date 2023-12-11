@@ -1,0 +1,268 @@
+@charset "utf-8";
+
+@keyframes color{
+  0%{
+    color: rgb(65,109,234);
+  }
+  35%{
+    color: rgb(254, 238, 125);
+  }
+  70%{
+    color: rgb(61,210,141);
+  }
+  100%{
+    color: rgb(65,109,234);
+  }
+}
+@-o-keyframes color{
+  0%{
+    color: rgb(65,109,234);
+  }
+  35%{
+    color: rgb(254,238,125);
+  }
+  70%{
+    color: rgb(61,210,141);
+  }
+  100%{
+    color: rgb(65,109,234);
+  }
+}
+@-moz-keyframes color{
+  0%{
+    color: rgb(65,109,234);
+  }
+  35%{
+    color: rgb(254,238,125);
+  }
+  70%{
+    color: rgb(61,210,141);
+  }
+  100%{
+    color: rgb(65,109,234);
+  }
+}
+@-webkit-keyframes color{
+  0%{
+    color: rgb(65,109,234);
+  }
+  35%{
+    color: rgb(254,238,125);
+  }
+  70%{
+    color: rgb(61,210,141);
+  }
+  100%{
+    color: rgb(65,109,234);
+  }
+}
+
+#lnb{
+  position: relative;
+}
+
+#lnb .mo-menu{
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  display: none;
+}
+
+#lnb .mo-menu .menu-open{
+  border-radius: 100%;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#lnb .mo-menu .menu-close{
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+#lnb .mo-menu .menu-close svg{
+  fill: #fff;
+}
+
+#lnb .mo-menu.open .menu-open{
+  display: none;
+}
+
+#lnb .mo-menu.open .menu-close{
+  display: flex;
+}
+
+#lnb .mo-menu a img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#lnb .lnb-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 100%;
+  min-height: 100vh;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(5px);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+
+/* profile area */
+.profile{
+  width: 100%;
+  padding: 200px 50px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profile .img{
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.profile .img img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.profile .name{
+  margin-top: 20px;
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: #fff;
+}
+
+.profile .desc{
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+}
+/* profile area */
+
+/* gnb area */
+.gnb{
+  width: 100%;
+  padding: 0 50px 100px;
+}
+
+.gnb .gnb-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gnb .gnb-list + .gnb-list{
+  margin-top: 30px;
+}
+
+.gnb .gnb-list a{
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  color: #fff;
+  position: relative;
+}
+
+.gnb .gnb-list a:not(.active):hover{
+  animation: color 3s infinite ease-in-out;
+}
+
+.gnb .gnb-list a::after{
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  content: '';
+  position: absolute;
+  transition: width 0.3s ease-in-out;
+}
+
+.gnb .gnb-list a.active::after{
+  width: 100%;
+}
+/* gnb area */
+
+/* copylight */
+.copylight{
+  width: 100%;
+  padding: 20px;
+  margin-top: auto;
+  background: rgb(34, 34, 34);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.copylight p{
+  display: flex;
+  justify-content: flex-start;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+  color: rgb(204,204,204);
+}
+
+.copylight p a:hover{
+  text-decoration: underline;
+}
+
+.copylight span{
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+  color: rgb(102,102,102);
+}
+/* copylight */
+
+@media all and (max-width: 1500px) {
+  #lnb .lnb-container{
+    width: 300px;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  #lnb .mo-menu{
+    display: flex;
+  }
+
+  #lnb .lnb-container{
+    left: -100%;
+  }
+}
