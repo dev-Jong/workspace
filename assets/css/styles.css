@@ -92,6 +92,7 @@ html, body{
   color: #666;
   transition: color .3s ease;
 }
+
 #header .header-inner .pc-gnb .depth-items .depth-list a.active{
   color: #fff;
   font-weight: 900;
@@ -145,6 +146,34 @@ html, body{
   color: #666;
 }
 /* footer */
+
+/* top */
+#top{
+  position: fixed;
+  bottom: 20px;
+  right: 50%;
+  margin-right: -940px;
+  width: 80px;
+  opacity: 0;
+  z-index: -1;
+}
+
+#top a{
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 100%;
+  overflow: hidden;
+  background: rgba(0,0,0,0.1);
+  backdrop-filter: blur(1.2px);
+}
+
+#top a dotlottie-player{
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* top */
 
 /* content */
 #content{
@@ -550,6 +579,14 @@ html, body{
 
 
 /* 미디어쿼리 */
+@media all and (max-width: 1920px) {
+  /* top */
+  #top{
+    right: 20px;
+    margin-right: 0;
+  }
+  /* top */
+}
 @media all and (max-width: 1200px){
   /* work */
   #work .work-inner .work-cont .work-items .work-list:nth-of-type(1){
@@ -833,8 +870,15 @@ html, body{
     margin-top: 1.32vw;
     font-size: 2.37vw;
   }
-  
   /* footer */
+  
+  /* top */
+  #top{
+    bottom: 3.95vw;
+    right: 2.63vw;
+    width: 10.53vw;
+  }
+  /* top */
 
   /* play */
   #play{

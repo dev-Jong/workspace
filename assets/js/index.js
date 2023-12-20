@@ -1,4 +1,42 @@
 document.addEventListener("DOMContentLoaded", function(){
+  // top btn event
+  $("#top a").click(function(){
+    gsap.to(window, {
+      scrollTo: {
+        y: 0,
+        ease:"power2.inOut",
+      },
+    });
+  });
+
+  if ($(window).scrollTop() > $("#about").offset().top) {
+    gsap.to($("#top"), {
+      opacity: 1,
+      zIndex: 5
+    });
+  } else {
+    gsap.to($("#top"), {
+      opacity: 0,
+    }).then({
+      zIndex: -1
+    });
+  }
+
+  $(window).on("scroll", function(){
+    if ($(window).scrollTop() > $("#about").offset().top) {
+      gsap.to($("#top"), {
+        opacity: 1,
+        zIndex: 5
+      });
+    } else {
+      gsap.to($("#top"), {
+        opacity: 0,
+      }).then({
+        zIndex: -1
+      });
+    }
+  })
+
   // mobile depth
   $(".mo-menu").on("click", function(){
     $("html, body").css({
@@ -24,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function(){
       right: "-100%",
     });
   });
-
 
   // gnb event  
   const pcGnb = document.querySelectorAll(".pc-gnb .depth-list a");
