@@ -3,7 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>JH Seo Portfolio</title>
+
+  <!-- 파비콘 -->
   <link rel="apple-touch-icon" sizes="57x57" href="./assets/images/favicon/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="./assets/images/favicon/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="./assets/images/favicon/apple-icon-72x72.png">
@@ -21,186 +24,253 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="./assets/images/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
+  <!-- 파비콘 -->
+
   <link rel="stylesheet" href="./assets/css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <!-- gsap -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollToPlugin.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+  <!-- gsap -->
+
+  <!-- matter js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
+  <!-- matter js -->
+
+  <!-- lottie -->
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>   
+  <!-- lottie -->
+  
+  <script src="./assets/js/block.js"></script>
   <script src="./assets/js/index.js"></script>
-	<title>JH Portfolio</title>
 </head>
 <body>
   <section id="wrap">
-    <acticle id="lnb">
-      <div class="mo-menu">
-        <a href="javascript:;" class="menu-open">
-          <img src="./assets/images/me.jpg" loading="lazy" alt="JongHoon Seo" />
-        </a>
-        <a href="javascript:;" class="menu-close">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
-        </a>
-      </div>
-      <div class="lnb-container">
-        <div class="profile">
-          <div class="img">
-            <img src="./assets/images/me.jpg" loading="lazy" alt="JongHoon Seo" />
-          </div>
-          <p class="name">JongHoon Seo</p>
-          <span class="desc">MBTI : ISTJ<br />2017.03 ~ ing</span>
-        </div>
+    <header id="header">
+      <div class="header-inner">
+        <h1 class="header-logo">
+          <a href="/">JH SEO</a>
+        </h1>
         <div class="gnb">
-          <ul class="gnb-item">
-            <li class="gnb-list">
-              <a href="#about">About Me</a>
-            </li>
-            <li class="gnb-list">
-              <a href="#experience">Experience</a>
-            </li>
-            <li class="gnb-list">
-              <a href="#work-list">Work List</a>
-            </li>
-          </ul>
-        </div>
-        <div class="copylight">
-          <p>문의 : <a href="mailto:dev.jong91@gmail.com">dev.jong91@gmail.com</a></p>
-          <span>@ 2024 Seo-Jong-Hoon. All Rights Reserved.</span>
+          <div class="gnb-wrap pc-gnb">
+            <ul class="depth-items">
+              <li class="depth-list">
+                <a href="javascript:;">Play Ground</a>
+              </li>
+              <li class="depth-list">
+                <a href="javascript:;">About</a>
+              </li>
+              <li class="depth-list">
+                <a href="javascript:;">Experience</a>
+              </li>
+              <li class="depth-list">
+                <a href="javascript:;">Work</a>
+              </li>
+            </ul>
+          </div>
+          <div class="gnb-wrap mo-gnb">
+            <a href="javascript:;" class="mo-menu">
+              <video autoplay loop muted preload playsinline>
+                <source src="./assets/images/media.mp4" type="video/mp4" />
+              </video>
+            </a>
+            <div class="depth-inner">
+              <a href="javascript:;" class="mo-close">
+                <img src="../assets/images/ic_close.png" alt="" />
+              </a>
+              <ul class="depth-items">
+                <li class="depth-list">
+                  <a href="#play">Play Ground</a>
+                </li>
+                <li class="depth-list">
+                  <a href="#about">About</a>
+                </li>
+                <li class="depth-list">
+                  <a href="#experience">Experience</a>
+                </li>
+                <li class="depth-list">
+                  <a href="#work">Work</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </acticle>
+    </header>
     <article id="content">
-      <h1 id="title">JH Portfolio</h1>
-      <section id="about">
-        <div class="bg">
-          <img src="./assets/images/bg.jpg" alt="" />
-        </div>
-        <div class="text">
-          <h2 class="sub-title">About Me</h2>
-          <p>안녕하세요. 웹 퍼블리셔 <b>서종훈</b>입니다.</p>
-          <p><b>"할땐 집중해서 하고 쉴땐 편히 쉬자"</b> 라는 마음으로 <br class="mo-none" />UI 개발을 하고 있습니다.</p>
-          <p><b>Semantic Markup</b>, <b>React/Vue</b>, <b>웹 접근성</b> 등 여러 가지 환경 작업이 가능합니다.</p>
-          <p>부족한 부분을 꾸준히 공부 해 가며 발전하며, <br class="mo-none" />작업에 있어 <b>소통</b>에 중요성이 크다고 생각하며, <br class="mo-none" />원활하고 유연한 소통을 <b>열린 자세</b>로 나아가고 있습니다.</p>
-        </div>
-      </section>
-      <section id="experience">
-        <h2 class="sub-title">Experience</h2>
-        <div class="items">
-          <div class="items-list">
-            <p class="company">더그랩</p>
-            <p class="team">개발팀 퍼블리싱 선임연구원 (대리)</p>
-            <p class="work">웹,모바일,쇼핑몰 사이트 페이지, 서브페이지 코딩</p>
-            <p class="period">2021.07 ~ 2023.12</p>
-          </div>
-          <div class="items-list">
-            <p class="company">(주)신예 웹에이전시</p>
-            <p class="team">디자인팀 대리</p>
-            <p class="work">사이트 메인, 서브 페이지 코딩, 웹접근성 코딩</p>
-            <p class="period">2019.03 ~ 2021.06</p>
-          </div>
-          <div class="items-list">
-            <p class="company">(주)리듬엔</p>
-            <p class="team">개발팀 팀원</p>
-            <p class="work">모바일앱(쇼핑몰) 메인 , 서브페이지 코딩, 어플리케이션 인트로, 멤버(회원,로그인) , 메인 코딩</p>
-            <p class="period">2018.09 ~ 2019.01</p>
-          </div>
-          <div class="items-list">
-            <p class="company">비젠소프트</p>
-            <p class="team">퍼블리싱팀 팀원</p>
-            <p class="work">웹사이트 메인 페이지, 서브페이지 코딩</p>
-            <p class="period">2017.03 ~ 2018.05</p>
+      <div id="play">
+        <dotlottie-player src="https://lottie.host/83de9472-dfb4-491e-897a-fc266f5d9953/pPNqJ3VTpL.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
+        <p class="play-text">JH SEO PORTFOLIO PLAYGROUND </p>
+        <span class="play-desc">끌어서 날려보세요!! (쎄게 날리면 블럭이 돌아오지 않을 수도 있습니다.)</span>
+        <div class="play-box"></div>
+      </div>
+      <div id="about">
+        <div class="about-inner">
+          <h2 class="about-title">
+            <dotlottie-player src="https://lottie.host/211b55b1-37b1-41e1-8dfb-d2563af27e2b/XcGTBLAcCY.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
+          </h2>
+          <div class="about-cont">
+            <div class="about-img">
+              <img src="./assets/images/me.jpeg" alt="JH SEO" />
+            </div>
+            <div class="about-text">
+              <p>안녕하세요. 웹 퍼블리셔 서종훈입니다.</p>
+              <p><b>"작은 것도 책임감있게!!"</b> 라는 마음으로 UI 개발을 하고 있습니다.</p>
+              <p><b>Semantic Markup, React/Vue, 웹 표준/접근성</b> 등 <br />여러 가지 환경 작업이 가능합니다.</p>
+              <p>부족한 부분을 꾸준히 공부 해 가며 발전하며 작업에서 <b>소통</b>에 중요성을 알고 <br />원활하고 유연한 소통을 <b>열린 자세</b>로 나아가고 있습니다.</p>
+            </div>
           </div>
         </div>
-        <h2 class="sub-title">Education</h2>
-        <div class="items">
-          <div class="items-list">
-            <p class="company">경희사이버대학교(재학중)</p>
-            <p class="team">IT·디자인융합학부</p>
-            <p class="work">디지털소통과표현, 융합콘텐츠진화, 이진법의세계, 문화컨텐츠코딩, 인간과디자인 등</p>
-            <p class="period">2023.03 ~ ing</p>
-          </div>
-          <div class="items-list">
-            <p class="company">은곡직업전문학교</p>
-            <p class="team">멀티미디어 웹퍼블리싱</p>
-            <p class="work">포토샵,일러스트,웹표준,javaScript,jQuery,ui디자인,ux디자인,프리미어,애프터이팩트</p>
-            <p class="period">2016.05 ~ 2017.02</p>
-          </div>
-        </div>
-      </section>
-      <section id="work-list">
-        <h2 class="sub-title">Work List</h2>
-        <div class="items">
-          <div class="items-list">
-            <div class="list-box">
-              <div class="list-img">
-                <img src="./assets/images/portfolio01.png" alt="카카오뱅크 인증서" title="카카오뱅크 인증서" />
+      </div>
+      <div id="experience">
+        <div class="experience-inner">
+          <h2 class="experience-title">
+            Experience
+            <dotlottie-player src="https://lottie.host/866b59bd-b8dd-4a81-96a4-2d2a96b08f96/Xsfp1e9vwk.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
+          </h2>
+          <div class="experience-cont">
+            <div class="experience-items">
+              <div class="experience-list">
+                <div class="bar blue"></div>
+                <p class="company">(주)더그랩</p>
+                <p class="part">개발팀 퍼블리싱 선임연구원(대리)</p>
+                <p class="works">웹, 모바일, 쇼핑몰, 기업, 사내툴 작업</p>
+                <p class="date">2021.07 ~ 2023.12</p>
               </div>
-              <div class="list-desc">
-                <p title="카카오뱅크 인증서">카카오뱅크 인증서</p>
-                <span title="Vue, Scss로 구현">Vue, Scss로 구현</span>
-                <a href="https://auth-st.kakaobank.com/" target="_blank">View</a>
+              <div class="experience-list">
+                <div class="bar"></div>
+                <p class="company">(주)신예 웹에이전시</p>
+                <p class="part">디자인팀 대리</p>
+                <p class="works">기업, 병원, 쇼핑몰, 사내툴 웹 표준, 웹 접근성 마크</p>
+                <p class="date">2019.03 ~ 2021.06</p>
               </div>
-            </div>
-          </div>
-          <div class="items-list">
-            <div class="list-box">
-              <div class="list-img">
-                <img src="./assets/images/portfolio02.png" alt="IFA2023 LG관 QR이벤트" title="IFA2023 LG관 QR이벤트(Mobile)" />
+              <div class="experience-list">
+                <div class="bar"></div>
+                <p class="company">(주)리듬엔</p>
+                <p class="part">개발팀 팀원</p>
+                <p class="works">모바일앱(쇼핑몰), 어플리케이션 인트로, 멤버(회원,로그인)</p>
+                <p class="date">2018.09 ~ 2019.01</p>
               </div>
-              <div class="list-desc">
-                <p title="IFA2023 LG관 QR이벤트(Mobile)">IFA2023 LG관 QR이벤트(Mobile)</p>
-                <span title="gsap, lottie, 카메라QR(canvas)로 구현">gsap, lottie, 카메라QR(canvas)로 구현</span>
-                <a href="https://event-lgifa2023.com/" target="_blank">View</a>
+              <div class="experience-list">
+                <div class="bar"></div>
+                <p class="company">비젠소프트</p>
+                <p class="part">퍼블리싱팀 팀원</p>
+                <p class="works">기업, 병원, 퍼블리싱 템플릿, 관리자</p>
+                <p class="date">2017.03 ~ 2018.05</p>
               </div>
             </div>
           </div>
-          <div class="items-list">
-            <div class="list-box">
-              <div class="list-img">
-                <img src="./assets/images/portfolio03.png" alt="Line Seed Font" title="Line Seed Font" />
+          <h2 class="experience-title mt100">
+            Education
+            <dotlottie-player src="https://lottie.host/148f6e90-a763-45d4-ae26-855e4995f2b6/WeXyWp5KaU.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
+          </h2>
+          <div class="experience-cont">
+            <div class="experience-items">
+              <div class="experience-list">
+                <div class="bar blue"></div>
+                <p class="company">경희사이버대학교(재학중)</p>
+                <p class="part">IT·디자인융합학부</p>
+                <p class="works">디지털 소통과 표현, 융합콘텐츠 진화, 이진법의 세계, 문화컨텐츠 코딩, 인간과 디자인</p>
+                <p class="date">2023.03 ~ ing</p>
               </div>
-              <div class="list-desc">
-                <p title="Line Seed Font">Line Seed Font</p>
-                <span title="Text Typing, 물리엔진(canvas)로 구현">Text Typing, 물리엔진(canvas)로 구현</span>
-                <a href="https://seed.line.me/" target="_blank">View</a>
-              </div>
-            </div>
-          </div>
-          <div class="items-list">
-            <div class="list-box">
-              <div class="list-img">
-                <img src="./assets/images/portfolio04.png" alt="Line Ground" title="Line Ground" />
-              </div>
-              <div class="list-desc">
-                <p title="Line Ground">Line Ground</p>
-                <span title="시퀀스, GSAP, magnetize로 구현">시퀀스, GSAP, magnetize로 구현</span>
-                <a href="https://ground.line.me/" target="_blank">View</a>
-              </div>
-            </div>
-          </div>
-          <div class="items-list">
-            <div class="list-box">
-              <div class="list-img">
-                <img src="./assets/images/portfolio05.png" alt="JTBC magazine" title="JTBC magazine" />
-              </div>
-              <div class="list-desc">
-                <p title="ELLE Shop">ELLE Shop</p>
-                <span title="Sass, Masonry, Swiper 사용해서 페이지 구현">Sass, Masonry, Swiper 사용해서 페이지 구현</span>
-                <a href="https://www.elle.co.kr/shop" target="_blank">View</a>
-              </div>
-            </div>
-          </div>
-          <div class="items-list">
-            <div class="list-box">
-              <div class="list-img">
-                <img src="./assets/images/portfolio06.png" alt="JTBC magazine" title="JTBC magazine" />
-              </div>
-              <div class="list-desc">
-                <p title="JTBC magazine">JTBC magazine</p>
-                <span title="ELLE, Cosmopolitan, bazzar, esquire 부분 페이지 추가 작업">ELLE, Cosmopolitan, bazzar, esquire 부분 페이지 추가 작업</span>
-                <a href="https://www.elle.co.kr/" target="_blank">View</a>
+              <div class="experience-list">
+                <div class="bar"></div>
+                <p class="company">은곡직업전문학교</p>
+                <p class="part">멀티미디어 웹퍼블리싱</p>
+                <p class="works">포토샵, 일러스트, 웹표준, JS & JQ, UI 디자인, UX 디자인, 프리미어, 애프터이팩트</p>
+                <p class="date">2016.05 ~ 2017.02</p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+      <div id="work">
+        <div class="work-inner">
+          <h2 class="work-title">
+            Work
+            <dotlottie-player src="https://lottie.host/5ca9f018-ad88-4b82-9941-582cf58a412a/DGeIr1JdNr.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
+          </h2>
+          <div class="work-cont">
+            <div class="work-items">
+              <a href="https://auth.kakaobank.com/" target="_blank" class="work-list">
+                <div class="work-bg"></div>
+                <div class="work-img">
+                  <dotlottie-player src="https://lottie.host/48a01470-a9b4-4180-8731-334b5be6d8fb/OiqFHtLAgC.json" background="transparent" speed="1" autoplay loop></dotlottie-player>
+                </div>
+                <div class="work-box">
+                  <p class="work-box-title">카카오뱅크 인증서</p>
+                  <p class="work-box-desc">Vue, Scss로 전체적인 레이아웃 구현</p>
+                  <span class="work-box-contribute">기여도(참여도) 80%</span>
+                </div>
+              </a>
+              <a href="https://event-lgifa2023.com/" target="_blank" class="work-list">
+                <div class="work-bg"></div>
+                <div class="work-img">
+                  <dotlottie-player src="https://lottie.host/9a9e7fd1-57b0-4f5d-9143-e260b0a62c74/7Cp2uEZfWz.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
+                </div>
+                <div class="work-box">
+                  <p class="work-box-title">IFA2023 LG관 QR이벤트</p>
+                  <p class="work-box-desc">(Mobile) gsap, lottie, 카메라QR(canvas) 인터랙션 구현</p>
+                  <span class="work-box-contribute">기여도(참여도) 80%</span>
+                </div>
+              </a>
+              <a href="https://seed.line.me/" target="_blank" class="work-list">
+                <div class="work-bg"></div>
+                <div class="work-img">
+                  <dotlottie-player src="https://lottie.host/fe1d9c66-1020-4319-9026-586217b4cf04/i7x7xw1BM1.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
+                </div>
+                <div class="work-box">
+                  <p class="work-box-title">LINE SEED FONT</p>
+                  <p class="work-box-desc">Text Typing, 물리엔진(canvas)으로 페이지, 인터랙션 구현</p>
+                  <span class="work-box-contribute">기여도(참여도) 90%</span>
+                </div>
+              </a>
+              <a href="https://ground.line.me/" target="_blank" class="work-list">
+                <div class="work-bg"></div>
+                <div class="work-img">
+                  <dotlottie-player src="https://lottie.host/0a72eaaa-6f6c-4d6a-805e-723b17a0e220/vX4sw6QiK2.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
+                </div>
+                <div class="work-box">
+                  <p class="work-box-title">LINE GROUND</p>
+                  <p class="work-box-desc">시퀀스, GSAP, magnetize 인터랙션 구현</p>
+                  <span class="work-box-contribute">기여도(참여도) 70%</span>
+                </div>
+              </a>
+              <a href="https://www.elle.co.kr/shop" target="_blank" class="work-list">
+                <div class="work-bg"></div>
+                <div class="work-img">
+                  <dotlottie-player src="https://lottie.host/7300352e-cf21-49ee-a51b-5ccc4b3da34b/VtkhZ16UMH.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
+                </div>
+                <div class="work-box">
+                  <p class="work-box-title">ELLE Shop</p>
+                  <p class="work-box-desc">Sass, Masonry, Swiper으로 전체적인 페이지 구현</p>
+                  <span class="work-box-contribute">기여도(참여도) 100%</span>
+                </div>
+              </a>
+              <a href="https://www.elle.co.kr/" target="_blank" class="work-list">
+                <div class="work-bg"></div>
+                <div class="work-img">
+                  <dotlottie-player src="https://lottie.host/1be82291-7a40-4e41-a29f-ad4896305661/X5BEBVRC77.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
+                </div>
+                <div class="work-box">
+                  <p class="work-box-title">JTBC MAGAZINE</p>
+                  <p class="work-box-desc">ELLE, Cosmopolitan, bazzar, esquire 부분 페이지 추가 작업</p>
+                  <span class="work-box-contribute">기여도(참여도) 100%</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </article>
+    <footer id="footer">
+      <div class="footer-inner">
+        <p>문의하기 :&nbsp;<a href="mailto:dev.jong91@gmail.com">dev.jong91@gmail.com</a>&nbsp;<dotlottie-player src="https://lottie.host/fc8338df-1bdf-4ca8-8969-d57e6d2b53c3/a2agh106xJ.json" background="transparent" speed="1" loop autoplay></dotlottie-player></p>
+        <span>@ 2023 Seo-Jong-Hoon. All Rights Reserved.</span>
+      </div>
+    </footer>
   </section>
 </body>
 </html>
