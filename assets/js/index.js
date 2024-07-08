@@ -238,6 +238,7 @@ document.addEventListener("DOMContentLoaded", function(){
   const experienceTitles = document.querySelectorAll(".experience-title");
   const experienceList = document.querySelectorAll(".experience-list");
   const workList = document.querySelectorAll(".work-list");
+  const workItems = document.querySelectorAll(".lists-items");
   aboutTexts.forEach(el => {
     gsap.to(el, {
       scrollTrigger: {
@@ -286,4 +287,15 @@ document.addEventListener("DOMContentLoaded", function(){
       transform: "translateY(0)"
     })
   });
+  workItems.forEach(el => {
+    gsap.to(el, {
+      scrollTrigger: {
+        trigger: el,
+        start: "bottom bottom",
+        end: "bottom bottom"
+      },
+      opacity: 1,
+      transform: "translateY(0)"
+    })
+  })
 });                           
